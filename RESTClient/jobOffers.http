@@ -1,0 +1,16 @@
+### Login the admin
+GET http://localhost:3000/jobOffers
+Content-Type: application/json
+
+### Login the admin
+POST http://localhost:3000/jobOffers/create
+Content-Type: application/json
+
+{
+    "title": "titre4",
+    "contactMail": "mail2@contact.com",
+    "contractType": "CDD",
+    "description": "un job qui consiste en jsp...",
+    "idCompany": 1
+}
+
