@@ -1,0 +1,13 @@
+### Login
+# @name login
+POST http://localhost:3000/auths/login
+Content-Type: application/json
+
+{
+    "email":"facebok@gmail.com",
+    "password":"admin"
+}
+
+### get users by filter on email or name
+GET http://localhost:3000/users/getUserSession
+Authorization: {{login.response.body.token}}
