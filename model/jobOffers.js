@@ -23,7 +23,13 @@ class JobOffers {
         return items
     }
 
+    getAllMyJobOffers(idCompany){
+        let items = parse(this.jsonDbPath);
+       
+        const result = items.filter(item => item.idCompany===idCompany);
 
+        return result;
+    }
 }
 
 module.exports = { JobOffers };

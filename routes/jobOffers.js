@@ -2,6 +2,9 @@ var express = require("express");
 var router = express.Router();
 const { JobOffers } = require("../model/jobOffers");
 const jobOfferModel = new JobOffers();
+const { authorize } = require('../utils/authorize');
+const { Users } = require("../model/users");
+const userModel = new Users();
 
 /* POST create a job offer */
 router.post("/create", function (req, res, next) {
@@ -24,6 +27,12 @@ router.post("/create", function (req, res, next) {
   )
   if (!newJobOffer) return res.status(500).end(); 
     return res.json(newJobOffer);
+});
+
+router.get('/company/getAllMyJobOffers/', authorize,function(req, res, next) {
+  if(req.user.type!=="company") return res.status(403).end(); 
+  const myOffers = jobOfferModel.getAllMyJobOffers(req.user.idUser);
+  res.send(myOffers);
 });
 
 module.exports = router;
