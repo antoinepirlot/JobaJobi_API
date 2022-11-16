@@ -14,6 +14,33 @@ class Users {
     this.jsonDbPath = dbPath;
   }
 
+  getUserFromSession(user){
+    let userToReturn;
+    //particular
+    if(user.type==="particular"){
+      userToReturn={
+        firstname: user.firstname,
+        name: user.name,
+        birthday: user.birthday,
+        phone: user.phone,
+        email: user.email,
+        type: user.type
+      }
+    }
+    //company
+    else{
+      userToReturn={
+        phone: user.phone,
+        email: user.email,
+        type: user.type,
+        companyName: user.companyName,
+        companyTown: user.companyTown,
+        companyDescription: user.companyDescription
+      }
+    }
+    return userToReturn;
+  }
+
   /**
    * Returns the user identified by email
    * @param {string} email - email of the item to find
