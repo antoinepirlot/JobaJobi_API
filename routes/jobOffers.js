@@ -2,19 +2,25 @@ var express = require("express");
 var router = express.Router();
 const { JobOffers } = require("../model/jobOffers");
 const jobOfferModel = new JobOffers();
-const { authorize } = require('../utils/authorize');
+const { authorize } = require("../utils/authorize");
 const { Users } = require("../model/users");
 const userModel = new Users();
 
 /* POST create a job offer */
-router.post("/create", function (req, res, next) { //TODO : add authorize
+router.post("/create", function (req, res, next) {
+  //TODO : add authorize
   if (
     !req.body ||
-    (!req.body.hasOwnProperty("title")) || (req.body.title.length === 0) ||
-    (!req.body.hasOwnProperty("contactMail")) || (req.body.contactMail.length === 0) ||
-    (!req.body.hasOwnProperty("description")) || (req.body.description.length === 0) ||
-    (!req.body.hasOwnProperty("contractType"))||( req.body.contractType.length === 0) ||
-    (!req.body.hasOwnProperty("idCompany"))||(req.body.idCompany <= 0)
+    !req.body.hasOwnProperty("title") ||
+    req.body.title.length === 0 ||
+    !req.body.hasOwnProperty("contactMail") ||
+    req.body.contactMail.length === 0 ||
+    !req.body.hasOwnProperty("description") ||
+    req.body.description.length === 0 ||
+    !req.body.hasOwnProperty("contractType") ||
+    req.body.contractType.length === 0 ||
+    !req.body.hasOwnProperty("idCompany") ||
+    req.body.idCompany <= 0
   ) {
     return res.status(400).end();
   }
@@ -24,23 +30,29 @@ router.post("/create", function (req, res, next) { //TODO : add authorize
     req.body.description,
     req.body.contractType,
     req.body.idCompany
-  )
-  if (!newJobOffer) return res.status(500).end(); 
-    return res.json(newJobOffer);
+  );
+  if (!newJobOffer) return res.status(500).end();
+  return res.json(newJobOffer);
 });
 
 /* GET get a job offer based on its id */
-router.get('/id/:id', function (req, res, next) { //TODO : add authorize
-  if(req.params.id === undefined) return res.status(403).end();
+router.get("/id/:id", function (req, res, next) {
+  //TODO : add authorize
+  if (req.params.id === undefined) return res.status(403).end();
   const offer = jobOfferModel.getJobOfferById(req.params.id);
-  if(offer === undefined) res.sendStatus(404).end();
-  res.send(offer);  
+  if (offer === undefined) res.sendStatus(404).end();
+  res.send(offer);
 });
 
-router.get('/company/getAllMyJobOffers/', authorize,function(req, res, next) {
-  if(req.user.type!=="company") return res.status(403).end(); 
+router.get("/company/getAllMyJobOffers/", authorize, function (req, res, next) {
+  if (req.user.type !== "company") return res.status(403).end();
   const myOffers = jobOfferModel.getAllMyJobOffers(req.user.idUser);
   res.send(myOffers);
+});
+
+router.get("/getAll/", authorize, function (req, res, next) {
+  const offers = jobOfferModel.getAllJobOffers();
+  res.send(offers);
 });
 
 module.exports = router;
