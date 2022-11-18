@@ -7,7 +7,7 @@ const { Users } = require("../model/users");
 const userModel = new Users();
 
 /* POST create a job offer */
-router.post("/create", function (req, res, next) {
+router.post("/create", function (req, res, next) { //TODO : add authorize
   if (
     !req.body ||
     (!req.body.hasOwnProperty("title")) || (req.body.title.length === 0) ||
@@ -27,6 +27,14 @@ router.post("/create", function (req, res, next) {
   )
   if (!newJobOffer) return res.status(500).end(); 
     return res.json(newJobOffer);
+});
+
+/* GET get a job offer based on its id */
+router.get('/id/:id', function (req, res, next) { //TODO : add authorize
+  if(req.params.id === undefined) return res.status(403).end();
+  const offer = jobOfferModel.getJobOfferById(req.params.id);
+  if(offer === undefined) res.sendStatus(404).end();
+  res.send(offer);  
 });
 
 router.get('/company/getAllMyJobOffers/', authorize,function(req, res, next) {

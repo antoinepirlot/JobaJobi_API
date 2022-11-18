@@ -8,11 +8,13 @@ Content-Type: application/json
     "password":"admin"
 }
 
-### Login the admin
-GET http://localhost:3000/jobOffers
+
+### get a job offer based on its id
+GET http://localhost:3000/jobOffers/id/2
 Content-Type: application/json
 
-### Login the admin
+
+### create a job offer
 POST http://localhost:3000/jobOffers/create
 Content-Type: application/json
 

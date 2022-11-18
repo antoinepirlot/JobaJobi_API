@@ -7,7 +7,16 @@ class JobOffers {
       this.jsonDbPath = dbPath;
     }
 
-    async createOne(title,contactMail,description,contractType,idCompany){
+    /**
+     * Create a job offer
+     * @param {*} title - title of the job offer
+     * @param {*} contactMail - email of the person of contact
+     * @param {*} description - description of the job offer
+     * @param {*} contractType - type of contract in the job offer
+     * @param {*} idCompany - id of the company
+     * @returns 
+     */
+    createOne(title,contactMail,description,contractType,idCompany){
         let items = parse(this.jsonDbPath);
         const newOffer = {
             "idJobOffer":items.length+1,
@@ -21,6 +30,12 @@ class JobOffers {
         items.push(newOffer);
         serialize(this.jsonDbPath, items);
         return items
+    }
+
+    getJobOfferById(idJobOffer){
+        let items = parse(this.jsonDbPath);
+        const result = items.filter(item => item.idJobOffer===parseInt(idJobOffer));
+        return result[0];
     }
 
     getAllMyJobOffers(idCompany){
