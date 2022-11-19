@@ -39,8 +39,13 @@ router.post("/signup", async function(req, res) {
       || (req.body.hasOwnProperty("password") && req.body.password == "")
       || (req.body.hasOwnProperty("type") && req.body.type == "")
   ) {
-    res.status(400).end();
+    return res.status(400).end();
   }
+  const signedUpUser = userModel.signup(req.body);
+  if (!signedUpUser) {
+    return res.status(401).end();
+  }
+  return res.json(signedUpUser);
 });
 
   module.exports = router;
