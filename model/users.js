@@ -1,7 +1,6 @@
 "use strict";
 const jwt = require("jsonwebtoken");
 const bcrypt = require('bcrypt');
-require("dotenv").config();
 const { parse, serialize} = require("../utils/json");
 const jwtSecret = process.env.jwtSecret;
 const LIFETIME_JWT = 24 * 60 * 60 * 1000; // 24h
