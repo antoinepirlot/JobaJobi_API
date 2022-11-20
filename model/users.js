@@ -17,11 +17,11 @@ class Users {
   getUserFromSession(user) {
     let userToReturn;
     //particular
-    if (user.type === "particular") {
+    if (user.type === "Particulier") {
       userToReturn = {
-        idUser: user.idUser,
-        firstname: user.firstname,
-        name: user.name,
+        id: user.id,
+        firstName: user.firstName,
+        lastName: user.lastName,
         birthday: user.birthday,
         phone: user.phone,
         email: user.email,
@@ -31,7 +31,7 @@ class Users {
     //company
     else {
       userToReturn = {
-        idUser: user.idUser,
+        id: user.id,
         phone: user.phone,
         email: user.email,
         type: user.type,
@@ -97,15 +97,18 @@ class Users {
     const salt = bcrypt.genSaltSync(10);
     newUser.password = bcrypt.hashSync(newUser.password, salt)
     const items = parse(this.jsonDbPath);
-    newUser.id = items[items.length - 1].id + 1;
-    items.push(newUser)
-    serialize(jsonDbPath, items)
+    let nextId;
+    if(items.length===0) nextId=1;
+    else nextId = items[items.length - 1].id + 1;
+    newUser.id = nextId;
+    items.push(newUser);
+    serialize(jsonDbPath, items);
     return this.getToken(newUser)
   }
 
   getToken(authenticatedUser) {
     return jwt.sign(
-        { id_user: authenticatedUser.id },
+        { id: authenticatedUser.id },
         jwtSecret,
         { expiresIn: LIFETIME_JWT } // lifetime of the JWT
     );

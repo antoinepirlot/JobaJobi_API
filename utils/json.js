@@ -14,7 +14,7 @@ function parse(filePath) {
     // parse() Throws a SyntaxError exception if the string to parse is not valid JSON.
     return JSON.parse(fileData);
   } catch (err) {
-    return defaultArray;
+    return [];
   }
 }
 

@@ -8,7 +8,6 @@ const userModel = new Users();
 const authorize = (req, res, next) => {
   let token = req.get("authorization");
   if (!token) return res.status(401).end();
-
   try {
     const decoded = jwt.verify(token, jwtSecret);
     const userFound = userModel.getOneById(decoded.id);
