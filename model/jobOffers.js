@@ -18,8 +18,11 @@ class JobOffers {
    */
   createOne(title, contactMail, description, contractType, idCompany) {
     let items = parse(this.jsonDbPath);
+    const date = new Date();
+    const currentDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
     const newOffer = {
       idJobOffer: items.length + 1,
+      publicationDate: currentDate,
       title: title,
       contactMail: contactMail,
       description: description,

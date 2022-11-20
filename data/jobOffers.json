@@ -1,1 +1,32 @@
-[{"idJobOffer":1,"title":"titre","contactMail":"mail@contact.com","contract":"CDI","description":"un job qui consiste en ...","idCompany":2,"interestedUsersId":[{"idUser":11},{"idUser":25},{"idUser":40}]},{"idJobOffer":2,"title":"dede","contactMail":"ee@gmail.com","description":"d","contractType":"CDD","idCompany":1,"interestedUsersId":[]}]
+[
+  {
+    "idJobOffer": 1,
+    "publicationDate": "18/11/2022",
+    "title": "titre",
+    "contactMail": "mail@contact.com",
+    "description": "un job qui consiste en ...",
+    "contractType": "CDI",
+    "idCompany": 2,
+    "interestedUsersId": [{ "idUser": 11 }, { "idUser": 25 }, { "idUser": 40 }]
+  },
+  {
+    "idJobOffer": 2,
+    "publicationDate": "19/11/2022",
+    "title": "dede",
+    "contactMail": "ee@gmail.com",
+    "description": "d",
+    "contractType": "CDD",
+    "idCompany": 1,
+    "interestedUsersId": []
+  },
+  {
+    "idJobOffer": 3,
+    "publicationDate": "20/11/2022",
+    "title": "dev mobile",
+    "contactMail": "mail2533@contact.com",
+    "description": "un job qui consiste en dev mobile app...",
+    "contractType": "CDI",
+    "idCompany": 1,
+    "interestedUsersId": []
+  }
+]

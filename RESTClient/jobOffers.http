@@ -19,10 +19,10 @@ POST http://localhost:3000/jobOffers/create
 Content-Type: application/json
 
 {
-    "title": "titre4",
-    "contactMail": "mail2@contact.com",
-    "contractType": "CDD",
-    "description": "un job qui consiste en jsp...",
+    "title": "dev mobile",
+    "contactMail": "mail2533@contact.com",
+    "contractType": "CDI",
+    "description": "un job qui consiste en dev mobile app...",
     "idCompany": 1
 }
 
