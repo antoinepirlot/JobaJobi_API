@@ -73,6 +73,12 @@ class JobOffers {
     const result = items;
     return result;
   }
+
+  getAllInterestedFromAJobOffer(idJobOffer){
+    let items = parse(this.jsonDbPath);
+    const result = items.filter((item) => item.idJobOffer === parseInt(idJobOffer))[0];
+    return result.interestedUsersId;
+  }
 }
 
 module.exports = { JobOffers };

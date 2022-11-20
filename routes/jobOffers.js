@@ -55,6 +55,16 @@ router.get("/getAll/", authorize, function (req, res, next) {
   res.send(offers);
 });
 
+router.get("/getAllInterested/:id", function (req, res, next) { //TODO : add authorize
+  const idsInterested = jobOfferModel.getAllInterestedFromAJobOffer(req.params.id);
+  let allInterested = [];
+  for(let i=0; i<idsInterested.length; i++){
+    allInterested[i] = userModel.getOneById(idsInterested[i].idUser);
+    delete allInterested[i].password; // delete the password for security
+  }
+  res.send(JSON.stringify(allInterested));
+});
+
 router.post("/createIntrested/", function (req, res, next) {
   //TODO : add authorize
   if (

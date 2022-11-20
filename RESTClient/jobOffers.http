@@ -31,6 +31,10 @@ Content-Type: application/json
 GET http://localhost:3000/jobOffers/company/getAllMyJobOffers/
 Authorization: {{login.response.body.token}}
 
+### Get all interested for a job offer
+GET http://localhost:3000/jobOffers/getAllInterested/1
+Content-Type: application/json
+
 ### Login the admin
 GET http://localhost:3000/jobOffers/getAll/
 Authorization: {{login.response.body.token}}

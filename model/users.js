@@ -2,7 +2,6 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
-const bcrypt = require('bcrypt');
 const { parse, serialize} = require("../utils/json");
 
 const jwtSecret = process.env.jwtSecret;
@@ -54,6 +53,18 @@ class Users {
     const foundIndex = items.findIndex((user) => user.email == email);
     if (foundIndex < 0) return;
 
+    return items[foundIndex];
+  }
+
+  /**
+   * Returns the user identified by its id
+   * @param {string} id - id of the item to find
+   * @returns {object} the user found or undefined if the email does not lead to an user
+   */
+  getOneById(id) {
+    const items = parse(this.jsonDbPath);
+    const foundIndex = items.findIndex((user) => user.id == parseInt(id));
+    if (foundIndex < 0) return;
     return items[foundIndex];
   }
 

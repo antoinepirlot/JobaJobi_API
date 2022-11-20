@@ -1,1 +1,95 @@
-[{"firstname":"admin","name":"admin","birthday":"2001-09-15","phone":"0493987654","email":"admin@gmail.com","password":"$2a$10$rX3L1zNabpnau93sIuhTeuT6j24VpxI/Wp1zypdaZgktBJf4tCdnW","type":"particular","companyName":null,"companyTown":null,"companyDescription":null},{"firstname":null,"name":null,"birthday":null,"phone":"0493987654","email":"facebok@gmail.com","password":"$2a$10$rX3L1zNabpnau93sIuhTeuT6j24VpxI/Wp1zypdaZgktBJf4tCdnW","type":"company","companyName":"facebok","companyTown":"bruxelles","companyDescription":"entreprise avec un réseau social"},{"firstName":"Antoine","lastName":"Pirlot","birthday":"2022-11-17","phone":"0472108452","email":"pirlotantoine2@gmail.com","password":"$2b$10$5UjYpah8kxks7NLKxrNHm.J/V9SyuyAObrdvIQHY5CPaGiLEk9iMu","type":"Particulier"},{"firstName":"test","lastName":"Test","birthday":"2022-11-12","phone":"test","email":"test@test.com","password":"$2b$10$sJmZ0COumQE2T6RVEgzURO.vTjNge1i0PJI2VBb3yp8YSej36kOBa","type":"05","id":null},{"firstName":"bgd","lastName":"fbdg","birthday":"2022-11-18","phone":"bf","email":"bfd","password":"$2b$10$1mQpZ19aeHwTOQmgkot.j.I2kr5773BfVdLOww4ZcTwNyk6JOrPbC","type":"rv","id":1},{"firstName":"fb","lastName":"f","birthday":"2022-11-12","phone":"fbd","email":"fbd","password":"$2b$10$E32Y09tRlGEdUvWRAN87Lebd2i0LfWNCk9i5iuVrlFu7mhtQOfvIy","type":"v","id":2}]
+[
+  {
+    "firstname": "admin",
+    "name": "admin",
+    "birthday": "2001-09-15",
+    "phone": "0493987654",
+    "email": "admin@gmail.com",
+    "password": "$2a$10$rX3L1zNabpnau93sIuhTeuT6j24VpxI/Wp1zypdaZgktBJf4tCdnW",
+    "type": "particular",
+    "companyName": null,
+    "companyTown": null,
+    "companyDescription": null
+  },
+  {
+    "firstname": null,
+    "name": null,
+    "birthday": null,
+    "phone": "0493987654",
+    "email": "facebok@gmail.com",
+    "password": "$2a$10$rX3L1zNabpnau93sIuhTeuT6j24VpxI/Wp1zypdaZgktBJf4tCdnW",
+    "type": "company",
+    "companyName": "facebok",
+    "companyTown": "bruxelles",
+    "companyDescription": "entreprise avec un réseau social"
+  },
+  {
+    "firstName": "Antoine",
+    "lastName": "Pirlot",
+    "birthday": "2022-11-17",
+    "phone": "0472108452",
+    "email": "pirlotantoine2@gmail.com",
+    "password": "$2b$10$5UjYpah8kxks7NLKxrNHm.J/V9SyuyAObrdvIQHY5CPaGiLEk9iMu",
+    "type": "Particulier"
+  },
+  {
+    "firstName": "test",
+    "lastName": "Test",
+    "birthday": "2022-11-12",
+    "phone": "test",
+    "email": "test@test.com",
+    "password": "$2b$10$sJmZ0COumQE2T6RVEgzURO.vTjNge1i0PJI2VBb3yp8YSej36kOBa",
+    "type": "05",
+    "id": null
+  },
+  {
+    "firstName": "bgd",
+    "lastName": "fbdg",
+    "birthday": "2022-11-18",
+    "phone": "bf",
+    "email": "bfd",
+    "password": "$2b$10$1mQpZ19aeHwTOQmgkot.j.I2kr5773BfVdLOww4ZcTwNyk6JOrPbC",
+    "type": "rv",
+    "id": 1
+  },
+  {
+    "firstName": "fb",
+    "lastName": "f",
+    "birthday": "2022-11-12",
+    "phone": "fbd",
+    "email": "fbd",
+    "password": "$2b$10$E32Y09tRlGEdUvWRAN87Lebd2i0LfWNCk9i5iuVrlFu7mhtQOfvIy",
+    "type": "v",
+    "id": 2
+  },
+  {
+    "firstName": "fb",
+    "lastName": "f",
+    "birthday": "2022-11-12",
+    "phone": "fbd",
+    "email": "fbd",
+    "password": "$2b$10$E32Y09tRlGEdUvWRAN87Lebd2i0LfWNCk9i5iuVrlFu7mhtQOfvIy",
+    "type": "v",
+    "id": 40
+  },
+  {
+    "firstName": "fb",
+    "lastName": "f",
+    "birthday": "2022-11-12",
+    "phone": "fbd",
+    "email": "fbd",
+    "password": "$2b$10$E32Y09tRlGEdUvWRAN87Lebd2i0LfWNCk9i5iuVrlFu7mhtQOfvIy",
+    "type": "v",
+    "id": 25
+  },
+  {
+    "firstName": "fb",
+    "lastName": "f",
+    "birthday": "2022-11-12",
+    "phone": "fbd",
+    "email": "fbd",
+    "password": "$2b$10$E32Y09tRlGEdUvWRAN87Lebd2i0LfWNCk9i5iuVrlFu7mhtQOfvIy",
+    "type": "v",
+    "id": 11
+  }
+]
