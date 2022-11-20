@@ -2,7 +2,9 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
-const { parse } = require("../utils/json");
+const bcrypt = require('bcrypt');
+const { parse, serialize} = require("../utils/json");
+
 const jwtSecret = process.env.jwtSecret;
 const LIFETIME_JWT = 24 * 60 * 60 * 1000; // 24h
 
@@ -82,6 +84,27 @@ class Users {
 
     authenticatedUser.token = token;
     return authenticatedUser;
+  }
+
+  async signup(newUser) {
+    if(this.getOneByEmail(newUser.email)) {
+      return;
+    }
+    const salt = bcrypt.genSaltSync(10);
+    newUser.password = bcrypt.hashSync(newUser.password, salt)
+    const items = parse(this.jsonDbPath);
+    newUser.id = items[items.length - 1].id + 1;
+    items.push(newUser)
+    serialize(jsonDbPath, items)
+    return this.getToken(newUser)
+  }
+
+  getToken(authenticatedUser) {
+    return jwt.sign(
+        { id_user: authenticatedUser.id },
+        jwtSecret,
+        { expiresIn: LIFETIME_JWT } // lifetime of the JWT
+    );
   }
 }
 

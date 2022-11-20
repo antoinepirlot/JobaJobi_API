@@ -25,4 +25,27 @@ router.post("/login", async function (req, res, next) {
     return res.json(authenticatedUser);
   });
 
+/**
+ * Sign up a new user
+ */
+router.post("/signup", async function(req, res) {
+  console.log("POST: /auths/signup");
+  if(req.body === null
+      || (req.body.hasOwnProperty("lastName") && req.body.lastName == "")
+      || (req.body.hasOwnProperty("firstName") && req.body.firstName == "")
+      || (req.body.hasOwnProperty("birthday") && req.body.birthday == "")
+      || (req.body.hasOwnProperty("phone") && req.body.phone == "")
+      || (req.body.hasOwnProperty("email") && req.body.email == "")
+      || (req.body.hasOwnProperty("password") && req.body.password == "")
+      || (req.body.hasOwnProperty("type") && req.body.type == "")
+  ) {
+    return res.status(400).end();
+  }
+  const signedUpUser = await userModel.signup(req.body);
+  if (!signedUpUser) {
+    return res.status(401).end();
+  }
+  return res.json(signedUpUser);
+});
+
   module.exports = router;

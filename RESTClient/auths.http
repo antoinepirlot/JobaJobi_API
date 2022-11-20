@@ -6,3 +6,17 @@ Content-Type: application/json
     "email":"admin@gmail.com",
     "password":"admin"
 }
+
+### POST signup
+POST http://localhost:3000/auths/signup
+Content-Type: application/json
+
+{
+  "lastName": "LastName",
+  "firstName": "firstName",
+  "birthday": "2012-12-02",
+  "phone": "0472584769",
+  "email":"test225@test.com",
+  "password":"hello",
+  "type": "Particulier"
+}
