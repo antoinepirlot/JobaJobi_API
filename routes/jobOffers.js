@@ -55,4 +55,23 @@ router.get("/getAll/", authorize, function (req, res, next) {
   res.send(offers);
 });
 
+router.post("/createIntrested/", function (req, res, next) {
+  //TODO : add authorize
+  if (
+    !req.body ||
+    !req.body.hasOwnProperty("idOffer") ||
+    req.body.idOffer.length <= 0 ||
+    !req.body.hasOwnProperty("idUser") ||
+    req.body.idUser.length <= 0
+  ) {
+    return res.status(400).end();
+  }
+  const newIntrested = jobOfferModel.createIntrested(
+    req.body.idOffer,
+    req.body.idUser
+  );
+  if (!newIntrested) return res.status(500).end();
+  return res.json(newIntrested);
+});
+
 module.exports = router;

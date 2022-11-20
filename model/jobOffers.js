@@ -32,6 +32,23 @@ class JobOffers {
     return items;
   }
 
+  createIntrested(idOffer, idUser) {
+    let items = parse(this.jsonDbPath);
+    if (
+      items
+        .filter((item) => item.idJobOffer === idOffer)[0]
+        .interestedUsersId.some((value) => value.idUser === idUser)
+    ) {
+      return items;
+    }
+    const result = items
+      .filter((item) => item.idJobOffer === idOffer)[0]
+      .interestedUsersId.push({ idUser: idUser });
+
+    serialize(this.jsonDbPath, items);
+    return this.getJobOfferById(idOffer);
+  }
+
   getJobOfferById(idJobOffer) {
     let items = parse(this.jsonDbPath);
     const result = items.filter(

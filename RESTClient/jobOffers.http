@@ -34,3 +34,12 @@ Authorization: {{login.response.body.token}}
 ### Login the admin
 GET http://localhost:3000/jobOffers/getAll/
 Authorization: {{login.response.body.token}}
+
+### create a job offer
+POST http://localhost:3000/jobOffers/createIntrested
+Content-Type: application/json
+
+{
+    "idOffer": 1,
+    "idUser": 2
+}

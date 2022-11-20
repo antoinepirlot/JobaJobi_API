@@ -1,6 +1,6 @@
 "use strict";
 const jwt = require("jsonwebtoken");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 require("dotenv").config();
 const { parse } = require("../utils/json");
 const jwtSecret = process.env.jwtSecret;
@@ -8,35 +8,36 @@ const LIFETIME_JWT = 24 * 60 * 60 * 1000; // 24h
 
 const jsonDbPath = __dirname + "/../data/users.json";
 
-
 class Users {
   constructor(dbPath = jsonDbPath) {
     this.jsonDbPath = dbPath;
   }
 
-  getUserFromSession(user){
+  getUserFromSession(user) {
     let userToReturn;
     //particular
-    if(user.type==="particular"){
-      userToReturn={
+    if (user.type === "particular") {
+      userToReturn = {
+        idUser: user.idUser,
         firstname: user.firstname,
         name: user.name,
         birthday: user.birthday,
         phone: user.phone,
         email: user.email,
-        type: user.type
-      }
+        type: user.type,
+      };
     }
     //company
-    else{
-      userToReturn={
+    else {
+      userToReturn = {
+        idUser: user.idUser,
         phone: user.phone,
         email: user.email,
         type: user.type,
         companyName: user.companyName,
         companyTown: user.companyTown,
-        companyDescription: user.companyDescription
-      }
+        companyDescription: user.companyDescription,
+      };
     }
     return userToReturn;
   }
@@ -46,7 +47,7 @@ class Users {
    * @param {string} email - email of the item to find
    * @returns {object} the user found or undefined if the email does not lead to an user
    */
-   getOneByEmail(email) {
+  getOneByEmail(email) {
     const items = parse(this.jsonDbPath);
     const foundIndex = items.findIndex((user) => user.email == email);
     if (foundIndex < 0) return;
@@ -74,8 +75,8 @@ class Users {
     };
 
     const token = jwt.sign(
-      { email: authenticatedUser.email }, 
-      jwtSecret, 
+      { email: authenticatedUser.email },
+      jwtSecret,
       { expiresIn: LIFETIME_JWT } // lifetime of the JWT
     );
 
