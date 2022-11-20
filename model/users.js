@@ -83,17 +83,10 @@ class Users {
     if (!match) return;
 
     const authenticatedUser = {
-      email: email,
       token: "",
     };
 
-    const token = jwt.sign(
-      { email: authenticatedUser.email },
-      jwtSecret,
-      { expiresIn: LIFETIME_JWT } // lifetime of the JWT
-    );
-
-    authenticatedUser.token = token;
+    authenticatedUser.token = this.getToken(userFound);
     return authenticatedUser;
   }
 

@@ -11,7 +11,7 @@ const authorize = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, jwtSecret);
-    const userFound = userModel.getOneByEmail(decoded.email);
+    const userFound = userModel.getOneById(decoded.id);
 
     if (!userFound) return res.status(403).end();
     req.user = userFound;
