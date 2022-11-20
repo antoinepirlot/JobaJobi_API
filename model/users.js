@@ -95,7 +95,11 @@ class Users {
       return;
     }
     const salt = bcrypt.genSaltSync(10);
-    newUser.password = bcrypt.hashSync(newUser.password, salt)
+    newUser.password = bcrypt.hashSync(newUser.password, salt);
+    newUser.companyName = null;
+    newUser.companyTown = null;
+    newUser.companyDescription = null;
+
     const items = parse(this.jsonDbPath);
     let nextId;
     if(items.length===0) nextId=1;
