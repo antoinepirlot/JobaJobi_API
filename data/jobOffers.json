@@ -7,7 +7,7 @@
     "description": "un job qui consiste en ...",
     "contractType": "CDI",
     "idCompany": 2,
-    "interestedUsersId": [{ "idUser": 11 }, { "idUser": 25 }, { "idUser": 40 }]
+    "interestedUsersId": [{ "idUser": 15555 }, { "idUser": 2 }, { "idUser": 3 }]
   },
   {
     "idJobOffer": 2,
