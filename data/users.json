@@ -50,7 +50,7 @@
     "companyName": null,
     "companyTown": null,
     "companyDescription": null,
-    "favorites": [1, 2],
+    "favorites": [1, 2, 3, 4],
     "id": 5
   }
 ]
