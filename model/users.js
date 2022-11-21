@@ -3,6 +3,8 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
 const { parse, serialize} = require("../utils/json");
+const {JobOffers} = require("./jobOffers");
+const jobOffersModel = new JobOffers();
 
 const jwtSecret = process.env.jwtSecret;
 const LIFETIME_JWT = 24 * 60 * 60 * 1000; // 24h
@@ -109,6 +111,17 @@ class Users {
     items.push(newUser);
     serialize(jsonDbPath, items);
     return this.getToken(newUser)
+  }
+
+  getAllFavorites(userId) {
+    const users = parse(this.jsonDbPath);
+    const favoritesIds = users.find(u => u.id === userId).favorites;
+    const jobOffers = jobOffersModel.getAllJobOffers();
+    const usersFavoritesOffers = [];
+    favoritesIds.forEach(favoriteId => {
+      usersFavoritesOffers.push(jobOffers.find(o => o.idJobOffer === favoriteId));
+    });
+    return usersFavoritesOffers;
   }
 
   getToken(authenticatedUser) {

@@ -13,5 +13,5 @@ GET http://localhost:3000/users/getUserSession
 Authorization: {{login.response.body.token}}
 
 ### GET favorites job offers
-GET http://localhost:3000/jobOffers/favorites/1
+GET http://localhost:3000/users/favorites
 Content-Type: application/json
