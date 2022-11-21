@@ -1,7 +1,4 @@
-const jwt = require("jsonwebtoken");
-require('dotenv').config();
-const jwtSecret = process.env.jwtSecret;
-
+const { decodeToken } = require('../utils/utils');
 const { Users } = require("../model/users");
 const userModel = new Users();
 
@@ -9,9 +6,8 @@ const authorize = (req, res, next) => {
   let token = req.get("authorization");
   if (!token) return res.status(401).end();
   try {
-    const decoded = jwt.verify(token, jwtSecret);
+    const decoded = decodeToken(token);
     const userFound = userModel.getOneById(decoded.id);
-
     if (!userFound) return res.status(403).end();
     req.user = userFound;
     next(); 
