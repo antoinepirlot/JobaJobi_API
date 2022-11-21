@@ -15,14 +15,10 @@ router.get('/getUserSession/', authorize,function(req, res, next) {
  * Get all favorites jobs offers of user identified by its id
  *
  */
-router.get("/favorites/:userId", function(req, res) {
+router.get("/favorites", function(req, res) {
   // TODO: add authorize
-  const userId = req.params["userId"];
-  console.log(`/favorites/${userId}`);
-  if (!userId || userId < 1) {
-    return res.status(400).end();
-  }
-
+  console.log(`/favorites`);
+  //TODO
   return res.status(200).end();
 });
 
