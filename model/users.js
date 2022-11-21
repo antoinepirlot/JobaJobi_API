@@ -99,6 +99,7 @@ class Users {
     newUser.companyName = null;
     newUser.companyTown = null;
     newUser.companyDescription = null;
+    newUser.favorites = [];
 
     const items = parse(this.jsonDbPath);
     let nextId;

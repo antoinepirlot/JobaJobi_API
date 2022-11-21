@@ -11,3 +11,7 @@ Content-Type: application/json
 ### get users by filter on email or name
 GET http://localhost:3000/users/getUserSession
 Authorization: {{login.response.body.token}}
+
+### GET favorites job offers
+GET http://localhost:3000/jobOffers/favorites/1
+Content-Type: application/json
