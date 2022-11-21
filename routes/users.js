@@ -6,7 +6,6 @@ const userModel = new Users();
 
 /* GET user of the session. */
 router.get('/getUserSession/', authorize,function(req, res, next) {
-  console.log(req.user);
   const result =  userModel.getUserFromSession(req.user);
   res.send(result);
 });
