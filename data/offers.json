@@ -1,0 +1,8 @@
+[
+  {
+    "id": 1,
+    "offerTitle": "Offre de test",
+    "offerDescription": "Description de l'offre de test, on essaie pour voir ce que ça donne même avec un long texte.\nC'est certain, quelqu'un va mettre offre en favori :).",
+    "offerType": "CDD"
+  }
+]
