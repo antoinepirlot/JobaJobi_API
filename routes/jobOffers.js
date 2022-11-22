@@ -45,8 +45,8 @@ router.get("/id/:id", function (req, res, next) {
 });
 
 router.get("/company/getAllMyJobOffers/", authorize, function (req, res, next) {
-  if (req.user.type !== "company") return res.status(403).end();
-  const myOffers = jobOfferModel.getAllMyJobOffers(req.user.idUser);
+  if (req.user.type !== "Entreprise") return res.status(403).end();
+  const myOffers = jobOfferModel.getAllMyJobOffers(req.user.id);
   res.send(myOffers);
 });
 

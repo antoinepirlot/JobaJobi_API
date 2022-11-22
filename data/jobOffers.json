@@ -76,5 +76,25 @@
     "contractType": "CDI",
     "idCompany": 6,
     "interestedUsersId": []
+  },
+  {
+    "idJobOffer": 14,
+    "publicationDate": "22/11/2022",
+    "title": "Nvle offre dev micro",
+    "contactMail": "stefant@gmail.com",
+    "description": "je paie pas",
+    "contractType": "Stage non rémunéré",
+    "idCompany": 3,
+    "interestedUsersId": [{ "idUser": 15555 }, { "idUser": 2 }, { "idUser": 3 }]
+  },
+  {
+    "idJobOffer": 15,
+    "publicationDate": "22/11/2022",
+    "title": "Nvle offre dev micro 2",
+    "contactMail": "stefant@gmail.com",
+    "description": "je paie pas",
+    "contractType": "Stage non rémunéré",
+    "idCompany": 3,
+    "interestedUsersId": [{ "idUser": 15555 }, { "idUser": 2 }, { "idUser": 3 }]
   }
 ]
