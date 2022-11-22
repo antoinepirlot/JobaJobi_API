@@ -106,6 +106,7 @@ class Users {
     } else {
       newUser.firstName = null;
       newUser.lastName = null;
+      newUser.favorites = null;
     }
     newUser.favorites = [];
 
