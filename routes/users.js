@@ -25,4 +25,17 @@ router.get("/favorites", authorize, function(req, res) {
   return res.json(favorites);
 });
 
+/**
+ * GET user by id
+ */
+ router.get("/id/:id", authorize, function (req, res, next) { //TODO : add authorize
+  const user = userModel.getOneById(req.params.id);
+  if(user !== undefined){
+    delete user.password
+    return res.send(JSON.stringify(user));
+  }
+  return res.status(404).end();
+  
+});
+
 module.exports = router;

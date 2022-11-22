@@ -66,5 +66,19 @@
     "lastName": null,
     "favorites": [],
     "id": 6
+  },
+  {
+    "birthday": "2022-11-17",
+    "phone": "04555555555",
+    "email": "microsoft2@gmail.com",
+    "password": "$2b$10$koGxLhdNag/mnEvt887N8ONOej1FOc5VgHMW223/RotZahPJBezH2",
+    "type": "Entreprise",
+    "companyName": "Microsoft2",
+    "companyTown": "Wemmel",
+    "companyDescription": "boite qui fait de l'info2",
+    "firstName": null,
+    "lastName": null,
+    "favorites": [],
+    "id": 7
   }
 ]
