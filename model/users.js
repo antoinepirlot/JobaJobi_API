@@ -98,9 +98,14 @@ class Users {
     }
     const salt = bcrypt.genSaltSync(10);
     newUser.password = bcrypt.hashSync(newUser.password, salt);
-    newUser.companyName = null;
-    newUser.companyTown = null;
-    newUser.companyDescription = null;
+    if (newUser.type == "Particulier") {
+      newUser.companyName = null;
+      newUser.companyTown = null;
+      newUser.companyDescription = null;
+    } else {
+      newUser.firstName = null;
+      newUser.lastName = null;
+    }
     newUser.favorites = [];
 
     const items = parse(this.jsonDbPath);
