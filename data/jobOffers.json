@@ -6,8 +6,8 @@
     "contactMail": "mail@contact.com",
     "description": "un job qui consiste en ...",
     "contractType": "CDI",
-    "idCompany": 2,
-    "interestedUsersId": [{ "idUser": 11 }, { "idUser": 25 }, { "idUser": 40 }]
+    "idCompany": 6,
+    "interestedUsersId": [{ "idUser": 15555 }, { "idUser": 2 }, { "idUser": 3 }]
   },
   {
     "idJobOffer": 2,
@@ -27,6 +27,54 @@
     "description": "un job qui consiste en dev mobile app...",
     "contractType": "CDI",
     "idCompany": 1,
+    "interestedUsersId": []
+  },
+  {
+    "idJobOffer": 4,
+    "title": "Offre de test",
+    "description": "Description de l'offre de test, on essaie pour voir ce que ça donne même avec un long texte.\nC'est certain, quelqu'un va mettre offre en favori :).",
+    "contractType": "CDD",
+    "idCompany": 1,
+    "interestedUsersId": []
+  },
+  {
+    "idJobOffer": 5,
+    "publicationDate": "22/11/2022",
+    "title": "ererer",
+    "contactMail": "stefaninho@gmail.com",
+    "description": "a",
+    "contractType": "CDI",
+    "idCompany": 1,
+    "interestedUsersId": []
+  },
+  {
+    "idJobOffer": 6,
+    "publicationDate": "22/11/2022",
+    "title": "Nvle offre dev micro",
+    "contactMail": "stefant@gmail.com",
+    "description": "je paie pas",
+    "contractType": "Stage non rémunéré",
+    "idCompany": 6,
+    "interestedUsersId": []
+  },
+  {
+    "idJobOffer": 7,
+    "publicationDate": "22/11/2022",
+    "title": "azertyqwerty",
+    "contactMail": "lol12555555@gmail.com",
+    "description": "zeeeezz",
+    "contractType": "Stage non rémunéré",
+    "idCompany": 6,
+    "interestedUsersId": []
+  },
+  {
+    "idJobOffer": 8,
+    "publicationDate": "22/11/2022",
+    "title": "zoubu",
+    "contactMail": "da@gmail.com",
+    "description": "azerty edesdc",
+    "contractType": "CDI",
+    "idCompany": 6,
     "interestedUsersId": []
   }
 ]
