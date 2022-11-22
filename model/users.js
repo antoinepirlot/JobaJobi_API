@@ -102,6 +102,7 @@ class Users {
       newUser.companyName = null;
       newUser.companyTown = null;
       newUser.companyDescription = null;
+      newUser.birthday = null;
     } else {
       newUser.firstName = null;
       newUser.lastName = null;
