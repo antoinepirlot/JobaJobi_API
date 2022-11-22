@@ -70,7 +70,7 @@ router.get("/getAllInterested/:id", function (req, res, next) { //TODO : add aut
   res.send(JSON.stringify(allInterested));
 });
 
-router.post("/createIntrested/", function (req, res, next) {
+router.post("/createIntrested/", authorize, function (req, res, next) {
   //TODO : add authorize
   if (
     !req.body ||
