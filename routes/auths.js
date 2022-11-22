@@ -37,14 +37,15 @@ router.post("/signup", async function (req, res) {
       || (user.type != "Particulier" && user.type != "Entreprise")
       || user.type == "Particulier" && (
           (!user.hasOwnProperty("lastName") && user.lastName == "")
-          || (!user.hasOwnProperty("firstName") && user.firstName == ""))
+          || (!user.hasOwnProperty("firstName") && user.firstName == "")
+          || (!user.hasOwnProperty("birthday") && user.birthday == "")
+      )
       || user.type == "Entreprise" && (
           (!user.hasOwnProperty("companyName") && user.companyName == "")
           || (!user.hasOwnProperty("companyTown") && user.companyTown == "")
           || (!user.hasOwnProperty("companyDescription")
               && user.companyDescription == "")
       )
-      || (!user.hasOwnProperty("birthday") && user.birthday == "")
       || (!user.hasOwnProperty("phone") && user.phone == "")
       || (!user.hasOwnProperty("email") && user.email == "")
       || (!user.hasOwnProperty("password") && user.password == "")
