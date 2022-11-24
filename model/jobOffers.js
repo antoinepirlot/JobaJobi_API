@@ -1,10 +1,12 @@
 "use strict";
 const { parse, serialize } = require("../utils/json");
 const jsonDbPath = __dirname + "/../data/jobOffers.json";
+const userJsonDbPath = __dirname + "/../data/users.json";
 
 class JobOffers {
-  constructor(dbPath = jsonDbPath) {
+  constructor(dbPath = jsonDbPath, userDbPath = userJsonDbPath) {
     this.jsonDbPath = dbPath;
+    this.userDbPath = userDbPath;
   }
 
   /**
@@ -49,6 +51,9 @@ class JobOffers {
       .interestedUsersId.push({ idUser: idUser });
 
     serialize(this.jsonDbPath, items);
+    const users = parse(this.userDbPath);
+    users.find(u => u.id === idUser).favorites.push(idOffer);
+    serialize(this.userDbPath, users);
     return this.getJobOfferById(idOffer);
   }
 
