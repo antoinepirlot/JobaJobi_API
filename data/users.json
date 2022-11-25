@@ -1,1 +1,16 @@
-[{"firstName":"a","lastName":"m","birthday":"2022-11-03","phone":"0485748372","email":"a@gmail.com","password":"$2b$10$qq43ZSCIFnKs2ZFt6//ZduEYYzKz6hjsb8rVienMLDkmRlmwkIgom","type":"Particulier","id":1},{"firstName":"a","lastName":"m","birthday":"2022-11-03","phone":"0485748372","email":"a@gmail.com","password":"$2b$10$qq43ZSCIFnKs2ZFt6//ZduEYYzKz6hjsb8rVienMLDkmRlmwkIgom","type":"Particulier","id":1},{"id":2,"firstName":null,"lastName":null,"birthday":null,"phone":"0493987654","email":"facebok@gmail.com","password":"$2a$10$rX3L1zNabpnau93sIuhTeuT6j24VpxI/Wp1zypdaZgktBJf4tCdnW","type":"Entreprise","companyName":"facebok","companyTown":"bruxelles","companyDescription":"entreprise avec un réseau social"},{"birthday":"2022-11-01","phone":"0485748372","email":"loltest@gmail.com","password":"$2b$10$U3vHkx2uP/PAOvEpUOw2Eu5SrwFJQQACmIPbfw9W.HALFO5N7G0Wy","type":"Entreprise","companyName":"amaa","companyTown":"social","companyDescription":"aaa","firstName":null,"lastName":null,"favorites":[],"id":3},{"birthday":null,"phone":"047","email":"pirlotantoine2@gmail.com","password":"$2b$10$E92QgA2boXdKfHbYJr.k2OxGvC2KyscPkmMOnZteyMp7uqe4UwJZW","type":"Particulier","companyName":null,"companyTown":null,"companyDescription":null,"favorites":[1, 2, 3, 4, 5],"id":4}]
+[
+  {
+    "firstName": "Antoine",
+    "lastName": "Pirlot",
+    "birthday": "2022-11-02",
+    "phone": "04",
+    "email": "pirlotantoine2@gmail.com",
+    "password": "$2b$10$f1fB/ZDTrS1NgZCYn57H1..vhEza1vBL1tiEd5pI6nyD68QnOcdAG",
+    "type": "Particulier",
+    "companyName": null,
+    "companyTown": null,
+    "companyDescription": null,
+    "favorites": [],
+    "id": 1
+  }
+]
