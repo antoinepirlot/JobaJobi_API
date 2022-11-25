@@ -7,8 +7,8 @@ const { Users } = require("../model/users");
 const userModel = new Users();
 
 /* POST create a job offer */
-router.post("/create", function (req, res, next) {
-  //TODO : add authorize
+router.post("/create", authorize, function (req, res, next) {
+  if (req.user.type !== "Entreprise") return res.status(403).end();
   if (
     !req.body ||
     !req.body.hasOwnProperty("title") ||
@@ -36,26 +36,28 @@ router.post("/create", function (req, res, next) {
 });
 
 /* GET get a job offer based on its id */
-router.get("/id/:id", function (req, res, next) {
-  //TODO : add authorize
+router.get("/id/:id", authorize, function (req, res, next) {
   if (req.params.id === undefined) return res.status(403).end();
   const offer = jobOfferModel.getJobOfferById(req.params.id);
   if (offer === undefined) res.sendStatus(404).end();
   res.send(offer);
 });
 
+/* GET get all job offers for a specific company */
 router.get("/company/getAllMyJobOffers/", authorize, function (req, res, next) {
   if (req.user.type !== "Entreprise") return res.status(403).end();
   const myOffers = jobOfferModel.getAllMyJobOffers(req.user.id);
   res.send(myOffers);
 });
 
+/* GET get all job offers */
 router.get("/getAll/", authorize, function (req, res, next) {
   const offers = jobOfferModel.getAllJobOffers();
   res.send(offers);
 });
 
-router.get("/getAllInterested/:id", function (req, res, next) { //TODO : add authorize
+/* GET get all interested users to a job offer based on the id of the job offer */
+router.get("/getAllInterested/:id", authorize, function (req, res, next) { 
   const idsInterested = jobOfferModel.getAllInterestedFromAJobOffer(req.params.id);
   let allInterested = [];
   let indice = 0;
@@ -70,8 +72,8 @@ router.get("/getAllInterested/:id", function (req, res, next) { //TODO : add aut
   res.send(JSON.stringify(allInterested));
 });
 
+/* POST create an interest for a job offer */
 router.post("/createIntrested/", authorize, function (req, res, next) {
-  //TODO : add authorize
   if (
     !req.body ||
     !req.body.hasOwnProperty("idOffer") ||
