@@ -4,7 +4,7 @@
 npm install
 ```
 
-### Run the Frontend
+### Run the Backend
 
 ```sh
 npm start
