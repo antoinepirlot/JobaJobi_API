@@ -2,7 +2,7 @@
 Le framework utilisé pour l'API de JobaJobi est express. Nous l'avons choisi car il est simple d'utilisation et simple à mettre en place.
 Cette API permet de stocker les utilisateurs et les offres d'emplois sous le format .json.
 
-Chaque requête nécéssitant une vérification d'authentification, nous vérifierons le token généré lors de l'inscription ou de la connexion.
+Pour chaque requête nécéssitant une vérification d'authentification, nous faisons une vérification du token généré lors de l'inscription ou de la connexion.
 
 # Type d'architecture
 Nous avons implémenté un serveur REST Client. Ce choix a été fait afin que la mise en place du backend soit la plus simple possible,
